@@ -16,13 +16,31 @@ class CalorieIntakeTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    // Properties and Outlets
+    // MARK: - Properties and Outlets
     
     var intake: [Intake] = []
     let series = ChartSeries([])
     let formatter = DateFormatter()
 
     @IBOutlet weak var chart: Chart!
+    
+    // MARK: - Persistent Store Fetch
+    
+    func fetchIntakeFromPersistentStore(context: NSManagedObjectContext) -> [Intake] {
+        
+        let fetchRequest: NSFetchRequest<Intake> = Intake.fetchRequest()
+        
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            NSLog("Error fetching calorie intake data: \(error).")
+            return []
+        }
+    }
+    
+    // MARK: - Add Calories Function
+    
+    // MARK: - Notifications
 
     // MARK: - Table view data source
 
