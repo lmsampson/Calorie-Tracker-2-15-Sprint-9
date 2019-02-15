@@ -40,6 +40,33 @@ class CalorieIntakeTableViewController: UITableViewController {
     
     // MARK: - Add Calories Function
     
+    @IBAction func addCalorieInformation(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Add Calorie Intake", message: "Enter the amount of calories in the field.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addTextField { (textField) in
+            textField.placeholder = "Calories:"
+        }
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (action) in
+            
+            if let cal = alert.textFields?.first?.text {
+                let intake = Intake(calories: Double(cal) ?? 0)
+                self.intake.append(intake)
+                
+                let data = intake.calories
+                let index = self.series.data.count
+                self.series.data.append((x: Double(index), y: Double(data)))
+                
+                do {
+                    try intake.managedObjectContext?.save()
+                } catch {
+                    NSLog("Failed to save context.")
+                }
+            }
+        }))
+    }
+    
     // MARK: - Notifications
 
     // MARK: - Table view data source

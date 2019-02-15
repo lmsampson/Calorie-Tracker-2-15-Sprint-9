@@ -72,7 +72,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="h0a-4U-zZm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xms-ej-xif"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xms-ej-xif">
+                            <connections>
+                                <action selector="addCalorieInformation:" destination="EJH-CB-zPe" id="sXX-QS-BzG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="chart" destination="ZC3-wA-WNb" id="0uC-zM-tf7"/>
