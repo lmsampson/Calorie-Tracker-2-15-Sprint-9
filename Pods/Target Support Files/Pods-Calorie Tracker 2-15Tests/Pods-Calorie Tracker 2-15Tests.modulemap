@@ -1,0 +1,6 @@
+framework module Pods_Calorie_Tracker_2_15Tests {
+  umbrella header "Pods-Calorie Tracker 2-15Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
