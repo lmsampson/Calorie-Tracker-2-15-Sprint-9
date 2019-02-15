@@ -87,6 +87,8 @@ class CalorieIntakeTableViewController: UITableViewController {
                 nc.post(name: .didCreateIntake, object: self)
             }
         }))
+        
+        present(alert, animated: true)
     }
     
     // MARK: - Notifications
