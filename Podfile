@@ -6,6 +6,7 @@ target 'Calorie Tracker 2-15' do
   use_frameworks!
 
   # Pods for Calorie Tracker 2-15
+  pod "SwiftChart"
 
   target 'Calorie Tracker 2-15Tests' do
     inherit! :search_paths
