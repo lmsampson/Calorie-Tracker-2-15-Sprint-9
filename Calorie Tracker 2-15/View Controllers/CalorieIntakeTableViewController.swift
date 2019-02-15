@@ -10,10 +10,29 @@ import UIKit
 import CoreData
 import SwiftChart
 
+extension NSNotification.Name {
+    static let didCreateIntake = NSNotification.Name("DidCreateIntake")
+}
+
 class CalorieIntakeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(didCreateIntake(_:)), name: .didCreateIntake, object: nil)
+        
+        intake = fetchIntakeFromPersistentStore(context: CoreDataStack.shared.mainContext)
+        
+        for cal in intake {
+            let index = series.data.count
+            let data = cal.calories
+            series.data.append((x: Double(index), y: Double(data)))
+        }
+        
+        chart.add(series)
+        series.color = ChartColors.purpleColor()
+        series.area = true
     }
     
     // MARK: - Properties and Outlets
@@ -63,11 +82,20 @@ class CalorieIntakeTableViewController: UITableViewController {
                 } catch {
                     NSLog("Failed to save context.")
                 }
+                
+                let nc = NotificationCenter.default
+                nc.post(name: .didCreateIntake, object: self)
             }
         }))
     }
     
     // MARK: - Notifications
+    
+    @objc func didCreateIntake(_ notification: Notification) {
+        tableView.reloadData()
+        chart.removeAllSeries()
+        chart.add(series)
+    }
 
     // MARK: - Table view data source
 
