@@ -18,7 +18,6 @@
 		FF3A7B98221727E200607753 /* CalorieTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF3A7B96221727E200607753 /* CalorieTracker.xcdatamodeld */; };
 		FF3A7B9A2217287B00607753 /* Intake+Convienence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A7B992217287B00607753 /* Intake+Convienence.swift */; };
 		FF3A7B9C22172E0100607753 /* CalorieIntakeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A7B9B22172E0100607753 /* CalorieIntakeTableViewController.swift */; };
-		FF3A7B9E22172EF600607753 /* ChartExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A7B9D22172EF600607753 /* ChartExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		FF3A7B97221727E200607753 /* CalorieTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalorieTracker.xcdatamodel; sourceTree = "<group>"; };
 		FF3A7B992217287B00607753 /* Intake+Convienence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Intake+Convienence.swift"; sourceTree = "<group>"; };
 		FF3A7B9B22172E0100607753 /* CalorieIntakeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieIntakeTableViewController.swift; sourceTree = "<group>"; };
-		FF3A7B9D22172EF600607753 /* ChartExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				FF3A7B9B22172E0100607753 /* CalorieIntakeTableViewController.swift */,
-				FF3A7B9D22172EF600607753 /* ChartExtension.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 				FF3A7B9A2217287B00607753 /* Intake+Convienence.swift in Sources */,
 				FF3A7B98221727E200607753 /* CalorieTracker.xcdatamodeld in Sources */,
 				FF3A7B9C22172E0100607753 /* CalorieIntakeTableViewController.swift in Sources */,
-				FF3A7B9E22172EF600607753 /* ChartExtension.swift in Sources */,
 				FF3A7B6F22171B9F00607753 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LA5UAXN45;
-				INFOPLIST_FILE = "Calorie Tracker 2-15/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Calorie Tracker 2-15/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LA5UAXN45;
-				INFOPLIST_FILE = "Calorie Tracker 2-15/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Calorie Tracker 2-15/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
