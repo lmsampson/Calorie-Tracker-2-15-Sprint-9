@@ -37,7 +37,11 @@ class CalorieIntakeTableViewController: UITableViewController {
     
     // MARK: - Properties and Outlets
     
-    var intake: [Intake] = []
+    var intake: [Intake] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     let series = ChartSeries([])
     let formatter = DateFormatter()
 
@@ -109,7 +113,7 @@ class CalorieIntakeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "intakeCell", for: indexPath)
         
         let calIntake = intake[indexPath.row]
-        cell.textLabel?.text = "Calories: \(calIntake.calories)"
+        cell.textLabel?.text = "Calories: \(Int(calIntake.calories))"
         
         formatter.dateFormat = "MM/dd/yyyy 'at' hh:mm aaa"
         cell.detailTextLabel?.text = calIntake.timestamp.map({ (timestamp) -> String in
@@ -118,4 +122,21 @@ class CalorieIntakeTableViewController: UITableViewController {
 
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//
+//            let intake = self.intake[indexPath.row]
+//            CoreDataStack.shared.mainContext.delete(intake)
+//
+//            do {
+//                try intake.managedObjectContext?.save()
+//            } catch {
+//                NSLog("Failed to save context.")
+//            }
+//
+//            tableView.reloadData()
+//        }
+//    }
+    
 }
